@@ -1,9 +1,9 @@
 {
-  "name": "ghiblimovies",
-  "version": "0.0.0",
+  "name": "ghibli-movies",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "dev": "ng serve --port 4550",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
