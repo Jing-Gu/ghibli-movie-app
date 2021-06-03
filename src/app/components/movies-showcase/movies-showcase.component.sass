@@ -1,0 +1,50 @@
+@import src/sass/mq
+
+.container
+  margin: 1rem 0.5rem
+  line-height: 1.5rem
+.movie-columns
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 1rem
+  margin: 1rem
+  @include mq(portrait)
+    grid-template-columns: 1fr 1fr
+    margin: 1rem 100px
+.movie-card
+  border: 1px solid red
+  margin-bottom: 1rem
+  display: flex
+  flex-direction: column
+  cursor: pointer
+  @include mq(portrait)
+    flex-direction: row
+  .image-wrapper
+    flex: 1
+    overflow: hidden
+    img
+      object-fit: cover
+      width: 100%
+  .info-wrapper
+    border: 1px solid black
+    flex: 3
+    margin: 1rem
+    .name
+      font-size: 1.5rem
+
+.desc
+  border: 1px solid red
+
+
+.desk-only
+  display: none
+  @include mq(portrait)
+    display: block
+
+.mobile-only
+  display: block
+  @include mq(portrait)
+    display: none
+
+.btn-readmore
+  cursor: pointer

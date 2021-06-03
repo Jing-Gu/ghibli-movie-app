@@ -1,0 +1,57 @@
+<div class='container movies-container'>
+  <h2 class='title'>Ghibli movies</h2>
+  <div class='movie-columns'>
+    <div class='left'>
+      <div class='movie-card' *ngFor="let movie of allMovies; let i = index"
+           (click)='openDetails(i)'>
+        <div class='image-wrapper'>
+          <img src='https://images.unsplash.com/photo-1569701813229-33284b643e3c' alt=''>
+        </div>
+        <div class='info-wrapper'>
+          <p class="name">{{ movie.title }}</p>
+          <span>{{ movie.original_title }}</span><span>({{ movie.original_title_romanised }})</span>
+          <div class='mobile-only'>
+            <button class='btn-readmore' (click)='toggleReadMore(i)' >{{ (showDetailsInMobile && selectedMovie === allMovies[i]) ? 'Read less' : 'Read more'}}</button>
+            <div *ngIf="selectedMovie === allMovies[i]">
+              <p *ngIf="showDetailsInMobile">{{ selectedMovie.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='right desk-only' *ngIf="showDetails else showFirst">
+      <p>{{ selectedMovie.title }}</p>
+      <span>{{ selectedMovie.original_title }}</span><span>({{ selectedMovie.original_title_romanised }})</span>
+      <p>Director: {{ selectedMovie.director }}</p>
+      <p>Producer: {{ selectedMovie.producer }}</p>
+      <p>Released date: {{ selectedMovie.release_date }}</p>
+      <p>{{ selectedMovie.description }}</p>
+    </div>
+    <ng-template #showFirst>
+      <p>{{ allMovies[0].title }}</p>
+    </ng-template>
+
+  </div>
+
+
+</div>
+
+<!-- sections make as a collapse -->
+
+<div class='container characters-container'>
+  <h2 class='title'>Ghibli characters</h2>
+</div>
+
+<div class='container places-container'>
+  <h2 class='title'>Ghibli places</h2>
+</div>
+
+<div class='container species-container'>
+  <h2 class='title'>Ghibli species</h2>
+</div>
+
+<div class='container vehicles-container'>
+  <h2 class='title'>Ghibli vehicles</h2>
+</div>
+
+

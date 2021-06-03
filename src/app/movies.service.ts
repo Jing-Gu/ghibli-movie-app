@@ -13,4 +13,8 @@ export class MoviesService {
   getAllMovies() {
     return this.http.get(`${this.url}/films`)
   }
+
+  getAllPeople() {
+    return this.http.get(`${this.url}/people`)
+  }
 }

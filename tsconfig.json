@@ -12,6 +12,7 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "checkJs": false,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2017",
@@ -23,9 +24,11 @@
     ]
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+    //"enableI18nLegacyMessageIdFormat": false,
+    //"strictInjectionParameters": true,
+    //"strictInputAccessModifiers": true,
+    //"strictTemplates": true
   }
 }

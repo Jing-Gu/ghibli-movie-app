@@ -1,0 +1,16 @@
+@mixin mq($size)
+  @if $size == phone
+    @media (min-width: 576px)
+      @content
+  @else if $size == portrait
+    @media (min-width: 768px)
+      @content
+  @else if $size == landscape
+    @media (min-width: 959px)
+      @content
+  @else if $size == hd
+    @media (min-width: 1280px)
+      @content
+  @else
+    @media (min-width: $size)
+      @content
